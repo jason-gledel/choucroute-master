@@ -1,0 +1,19 @@
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0 2rem 0;
+    .navClass {
+        ul.listClass {
+            display: flex;
+            gap: 2rem;
+        }
+    }
+    a {
+        .custom-logo {
+            height: 50px;
+            width: 220px;
+        }
+    }
+}
