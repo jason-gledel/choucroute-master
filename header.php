@@ -13,8 +13,9 @@
 
 <body <?php body_class('body'); ?>>
 
-    <div class="container-main">
+<div class="container-main">
         <header>
+            
                     <!-- Ajout du logo -->
                     <?php
                     if ( function_exists( 'the_custom_logo' ) ) {
@@ -34,6 +35,7 @@
                         'menu_class' => 'listClass'
                     ) );
                     ?>
+            
         </header>
 
 
