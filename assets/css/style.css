@@ -186,6 +186,7 @@ header a .custom-logo {
      object-fit: cover;
 }
 .recette-content .recipe-container {
+  margin-top: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -204,6 +205,9 @@ header a .custom-logo {
           flex-direction: column;
   gap: 1rem;
 }
+.recette-content .recipe-container .ingredients .list-ingredients .nom-ingredient {
+  margin-top: 2rem;
+}
 .recette-content .recipe-container .preparation {
   width: 60%;
 }
@@ -216,6 +220,13 @@ header a .custom-logo {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 1rem;
+}
+.recette-content .recipe-container .preparation .list-preparation .content-etape .numero-etape {
+  font-weight: bold;
+  margin-top: 2rem;
+}
+.recette-content .recipe-container .preparation .list-preparation .content-etape .texte-etape {
+  margin-top: 1rem;
 }
 
 .subtitle-recette {

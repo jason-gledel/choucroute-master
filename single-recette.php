@@ -35,14 +35,47 @@
             <div class="recipe-container">
                 <div class="ingredients">
                     <div class="title-ingredients">
-                        <p class="subtitle-recette">Ingrédients</p>
+                        <p class="subtitle-recette"><?php the_field('liste_ingredients');?></p>
                         <div class="line"></div>
                     </div>
-                </div>
+                    <div class="list-ingredients">
+
+
+                   <?php if(have_rows('liste_ingredients_repeteur')) : ?>
+                        <?php while (the_repeater_field('liste_ingredients_repeteur')) : ?>
+
+                            <p class="nom-ingredient"><?php the_sub_field('nom_ingredient'); ?></p>
+
+                        <?php endwhile; ?>
+                        <?php else : ?>
+                    <?php endif; ?>    
+                    
+                    </div>
+                    </div>
                 <div class="preparation">
                     <div class="title-preparation">
-                        <p class="subtitle-recette">Préparation</p>
+                        <p class="subtitle-recette"><?php the_field('liste_preparation');?></p>
                         <div class="line"></div>
+                    </div>
+                    <div class="list-preparation">
+                        <?php if(have_rows('etapes_preparation_rep')) : ?>
+                            <?php while (the_repeater_field('etapes_preparation_rep')) : ?>
+
+                                <div class="content-etape">
+                                    <p class="numero-etape"><?php the_sub_field('numero_etape'); ?></p>
+                                    <?php if(have_rows('texte_etape_rep')) : ?>
+                                        <?php while (the_repeater_field('texte_etape_rep')) : ?>
+
+                                    <p class="texte-etape"><?php the_sub_field('texte_etape'); ?></p>
+
+                                        <?php endwhile; ?>
+                                        <?php else : ?>
+                                    <?php endif; ?>  
+                                </div>
+
+                            <?php endwhile; ?>
+                            <?php else : ?>
+                        <?php endif; ?> 
                     </div>
                 </div>
             </div>
