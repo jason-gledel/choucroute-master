@@ -44,7 +44,7 @@
                    <?php if(have_rows('liste_ingredients_repeteur')) : ?>
                         <?php while (the_repeater_field('liste_ingredients_repeteur')) : ?>
 
-                            <p class="nom-ingredient"><?php the_sub_field('nom_ingredient'); ?></p>
+                            <p class="nom-ingredient">- <?php the_sub_field('nom_ingredient'); ?></p>
 
                         <?php endwhile; ?>
                         <?php else : ?>
@@ -82,3 +82,4 @@
            
         </article>
 
+<?php get_footer(); ?>

@@ -3,17 +3,40 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 2rem 0 2rem 0;
+    padding: 2rem 0 0 0;
     .navClass {
         ul.listClass {
             display: flex;
             gap: 2rem;
+            li {
+                a {
+                    font-family: $ff-main;
+                    color: $rouge;
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    text-decoration: none;
+                    padding: 1rem 2rem;
+                    text-transform: uppercase;
+                    -webkit-box-shadow: inset 0px 0px 0px 4px rgba(231,58,58,1);
+                    -moz-box-shadow: inset 0px 0px 0px 4px rgba(231,58,58,1);
+                    box-shadow: inset 0px 0px 0px 4px rgba(231,58,58,1);
+                    transition: 0.1s ease-in-out;
+                    background-color: #fff;
+                    &:hover {
+                        -webkit-box-shadow: inset 0px 0px 0px 6px rgba(231,58,58,1);
+                        -moz-box-shadow: inset 0px 0px 0px 6px rgba(231,58,58,1);
+                        box-shadow: inset 0px 0px 0px 6px rgba(231,58,58,1);
+    
+                    }
+                }
+            }
         }
     }
     a {
         .custom-logo {
-            height: 50px;
-            width: 220px;
+            height: 112px;
+            width: 250px;
         }
     }
 }

@@ -3,37 +3,26 @@ get_header();
 ?>
 
 
-    <section id="hero">
-        <div class="hero-content">
-            <h1><?php the_field('hero_title'); ?></h1>
+    <section class="hero" id="hero">
+        <div class="hero__content">
+            <h1 class="hero__content_title"><?php the_field('hero_title'); ?><span><?php the_field('hero_subtitle'); ?></span></h1>
             <p><?php the_field('hero_text'); ?></p>
             <a href="<?php the_field('hero_button_link'); ?>" class="btn-primary"><?php the_field('hero_button_text'); ?></a>
         </div>
-        <div class="hero-image">
-            <div class="hero-right-container">
-                <div class="hero-image-container">
+        <div class="hero__image">
+            <div class="hero__image_container">
+                <div class="hero__image_container_image">
                     <img src="<?php the_field('hero_image'); ?>" alt="Hero Image">
                 </div>
-                <div class="label-img" id="label-image-1"><?php the_field('label_image_1'); ?></div>
-                <div class="label-img" id="label-image-2"><?php the_field('label_image_2'); ?></div>
-                <div class="label-img" id="label-image-3"><?php the_field('label_image_3'); ?></div>
-            </div>
-        </div>
-    </section>
-    </div>
+                <img src="<?php the_field('hero_nappe_image'); ?>" class="img-nappe">
+                <div class="hero__image_container_whitebg">
 
-    <section id="about">
-        <div class="container-main about-container">
-            <img src="<?php the_field('about_image'); ?>" alt="About Image">
-            <div class="about-content">
-                <div class="content-container">
-                    <h2><?php the_field('about_title'); ?></h2>
-                    <p><?php the_field('about_text'); ?></p>
                 </div>
-                <a href="<?php the_field('about_button_link'); ?>" class="btn-primary"><?php the_field('about_button_text'); ?></a>
             </div>
         </div>
     </section>
+</div>
+
 
     <section id="articles">
         <div class="container-main">
@@ -57,15 +46,7 @@ get_header();
                     while ( $recent_posts->have_posts() ) : $recent_posts->the_post(); ?>
                         
                             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                <a href="<?php the_permalink(); ?>">
-                                    <div class="post-meta">
-                                        <span class="post-date"><?php echo get_the_date('d/m/Y'); ?></span>
-                                    </div>
-                                    <h3><?php the_title(); ?></h3>
-                                    <div class="thumbnailContainer">
-                                        <img class="thumbnailArticle" src="<?php the_field('article_thumbnail'); ?>">
-                                    </div>
-                                    <div class="article-card-categories">
+                            <div class="article-card-categories">
                                         <?php
                                         // Afficher les catégories
                                         $categories = get_the_category();
@@ -77,6 +58,16 @@ get_header();
                                         }
                                         ?>
                                     </div>
+                                <a href="<?php the_permalink(); ?>">
+                                    <div class="post-meta">
+                                        <span class="post-date"><?php echo get_the_date('d/m/Y'); ?></span>
+                                    </div>
+        
+                                    <h3><?php the_title(); ?></h3>
+                                    <div class="thumbnailContainer">
+                                        <img class="thumbnailArticle" src="<?php the_field('article_thumbnail'); ?>">
+                                    </div>
+
                                 </a>
                             </article>
                     

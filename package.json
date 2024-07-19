@@ -1,16 +1,15 @@
 {
-  "name": "WordPress-theme-boilerplate",
-  "version": "1.5",
+  "name": "integration-boilerplate",
   "description": "",
+  "version": "1.5",
   "scripts": {
     "deploy": "npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
     "build-autoprefix": "postcss --use autoprefixer --output style.css style.css",
     "build-cleancss": "cleancss -o style.css style.css",
-    "build-sass": "sass sass/styles.sass style.css",
+    "build-sass": "sass assets/scss/styles.scss style.css",
     "watch": "npm run build-sass -- --watch"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "https://github.com/melvinlemoine",
   "devDependencies": {
     "autoprefixer": "^10.4.19",
     "clean-css-cli": "5.6.3",
